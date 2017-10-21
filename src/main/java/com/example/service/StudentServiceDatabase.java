@@ -53,12 +53,12 @@ public class StudentServiceDatabase implements StudentService
 		studentMapper.updateStudent(student);
 	} //void tidak mengembalikan sesuatu
 
+	//disini tidak void, karena akan mengembalikan sesuatu
+	//yaitu mengembalikan daftar courses mahasiswa
+	
 	@Override
 	public CourseModel viewID(String idCourse) {
 		log.info("course " + idCourse);
-		//studentMapper.selectCourses(idCourse);
 		return studentMapper.selectCourse(idCourse);
 	}
-	//disini tidak void, karena akan mengembalikan sesuatu
-	//yaitu mengembalikan daftar courses mahasiswa
 }

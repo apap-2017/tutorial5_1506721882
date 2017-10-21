@@ -54,7 +54,8 @@ public interface StudentMapper
     
     @Select("select course.id_course, name, credits " + "from studentcourse join course " + "on studentcourse.id_course = course.id_course " + "where studentcourse.npm = #{npm}")
     @Results(value = {
-    		@Result(property="idCourse", column="id_course"),
+    		@Result(property=""
+    				+ "idCourse", column="id_course"),
     		@Result(property="name", column="name"),
     		@Result(property="credits", column="credits"),
     		@Result(property="students", column="id_course",
@@ -74,7 +75,7 @@ public interface StudentMapper
     				many=@Many(select="selectStudentCourse")) 
     		
     })
-    CourseModel selectCourse (@Param("id_course") String id_course);
+    CourseModel selectCourse (@Param("id_course")  String id_course);
     
     @Select("select * from student join StudentCourse on student.npm = studentcourse.npm where studentcourse.id_course = #{id_course}")
     List<StudentModel> selectStudentCourse(@Param("id_course") String id_course);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>View Course by idCourse</title>
+        <title th:replace="fragments/fragment :: head"></title>
     </head>
     <body>
     	<form th:object="${course}">

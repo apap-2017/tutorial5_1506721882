@@ -1,7 +1,6 @@
 package com.example.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -87,7 +86,7 @@ public class StudentController
     public String view (Model model)
     {
         List<StudentModel> students = studentDAO.selectAllStudents ();
-        model.addAttribute ("students", students);
+        model.addAttribute ("student", students);
 
         return "viewall";
     }
